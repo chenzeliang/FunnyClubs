@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.convention.default.parent.package" value="root"/>
+	
+	<package name="root"  extends="struts-default">
+		<global-results>  
+	            <result name="input">/jsp/error.jsp</result>  
+	    </global-results>  
+		<!-- 按名称搜索-->
+		<action name="search" class="com.funny.action.UserAction" method="findByName">
+			<result name="success">/jsp/welcome.jsp</result>
+		</action>
+		<!-- 欢迎页面 -->
+		<action name="" class="com.funny.action.UserAction" method="loginPage">
+			<result name="success">index.jsp</result>
+		</action>
+		
+		<action name="login" class="com.funny.action.UserAction" method="login">
+			<result name="success">/jsp/json.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+	</package>
+
+	<package name="ajax" extends="json-default">
+	    <action name="jsonAjax" class="com.funny.action.UserAction" method= "findUserList">
+	      <!-- 将返回类型设置为json -->
+	      <result type="json"></result>
+	    </action>
+	  </package>
+</struts>
