@@ -15,6 +15,7 @@ Ext.define('FunnyClub.Application', {
         'ApplicationController'
     ],
     requires:[
+        'FunnyClub.Registy',
         'Ext.layout.*',
         'Ext.view.*',
         'Ext.window.*',

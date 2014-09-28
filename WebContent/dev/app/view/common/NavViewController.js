@@ -3,13 +3,13 @@ Ext.define('FunnyClub.view.common.NavViewController', {
       alias: 'controller.nav',
 
    	onSelect: function(self, record){
-   		var reportId = record.get('reportId');
-   		if (!reportId) {
-   			console.log('no reportId');
+   		var pageId = record.get('pageId');
+   		if (!pageId) {
+   			console.log('no pageId');
    			return false;
    		};
    		var view = this.getView();
-   		view.fireEvent('changepage', view, reportId);
+   		view.fireEvent('changepage', view, pageId);
 
    	}
 

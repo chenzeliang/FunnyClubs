@@ -11,24 +11,31 @@ Ext.define('FunnyClub.controller.ApplicationController', {
             }
     	 });   
     },
-    onChangePage: function(navdataview, reportId, reportCmpClassName){
-        var mainPanel = this.getMainPanel();
-        
-        // mainPanel.mask('Loading...');
-        // var reportCmpClassName = FunnyClub.Registy.getReportCmp(reportId);
-        // if(reportCmpClassName) {
-            // if(mainPanel.aliveItems)
-        var reportCmp = mainPanel.aliveItems[reportId];
+    onChangePage: function(navdataview, pageId){
+        var me = this,
+            mainPanel = this.getMainPanel();
 
-        if(reportCmp) {
-            mainPanel.setActiveItem(reportCmp);
+        var pageCmpClassName = FunnyClub.Registy.getPageCmp(pageId),
+            pageCmp = mainPanel.aliveItems[pageId];
+        // var pageCmp = mainPanel.aliveItems[pageId];
+
+        if(pageCmp) {
+            mainPanel.setActiveItem(pageCmp);
         } else {
-            reportCmp = Ext.create(reportCmpClassName);
-            reportCmp.loadData();
-            mainPanel.add(reportCmp);
-            mainPanel.setActiveItem(reportCmp);
+            if(pageCmpClassName){
+                pageCmp = Ext.create(pageCmpClassName);
+                // 如果有 loadData 方法
+                if(Ext.isFunction(pageCmp.loadData)){
+                    pageCmp.loadData();
+                }
+            }else {
+                pageCmp = Ext.create('Ext.container.Container', {
+                    html: '<h2>This report is not yet complete</h2>'
+                })
+            }
+            mainPanel.add(pageCmp);
+            mainPanel.setActiveItem(pageCmp);
+            mainPanel.aliveItems[pageId] = pageCmp;
         }
-        // }
-        // mainPanel.unmask();
     }
 });

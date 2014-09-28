@@ -816,6 +816,7 @@ $include-extthemeneptune-resizer-splitter: true;
 $include-extthemeneptune-toolbar-paging: true;
 $include-extthemeneptune-toolbar-toolbar: true;
 $include-funnyclub-application: true;
+$include-funnyclub-registy: true;
 $include-funnyclub-controller-applicationcontroller: true;
 $include-funnyclub-model-common-funcdatamodel: true;
 $include-funnyclub-model-common-navmodel: true;
@@ -827,6 +828,7 @@ $include-funnyclub-view-common-headcontainer: true;
 $include-funnyclub-view-common-mainpanel: true;
 $include-funnyclub-view-common-navdataview: true;
 $include-funnyclub-view-common-navviewcontroller: true;
+$include-funnyclub-view-lol-recordview: true;
 /* including package ext-theme-base */
 @import '../../../../../ext/packages/ext-theme-base/sass/etc/all';
 /* including package ext-theme-neutral */

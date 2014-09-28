@@ -19,19 +19,19 @@ Ext.define('FunnyClub.view.common.NavDataView', {
 
         this.tpl = new Ext.XTemplate(
             '<tpl for=".">',
-                '<div id="rpt-{reportId}" class="function-button">',
+                '<div id="rpt-{pageId}" class="function-button">',
                     '<div class="function-img"><img src="{imgsrc}" style="cursor: pointer;" /></div>',
                 '<p class="function-name">{description}</p>',
                 '</div>',
             '</tpl>'
         );
-
+        this.listeners= {
+            select: 'onSelect',
+                scope: this.controller
+            // ,
+            // viewready: 'onViewready'
+            // beforeselect: 'onBeforeselect'
+        };
         this.callParent(arguments);
-    },
-    listeners: {
-        select: 'onSelect'
-        // ,
-        // viewready: 'onViewready'
-        // beforeselect: 'onBeforeselect'
     }
 });

@@ -5,7 +5,7 @@ Ext.define('FunnyClub.view.common.MainPanel', {
 	region: 'center',
 
     requires:[
-//        'FunnyClub.view.dashboard.DashboardView',
+        'FunnyClub.view.lol.RecordView'
 //        'FunnyClub.view.comments.CommentsView',
 //        'FunnyClub.view.customer.CustomerProfileView',
 //        'FunnyClub.view.survey.SurveyView',
