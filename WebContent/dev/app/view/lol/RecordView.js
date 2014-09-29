@@ -15,11 +15,11 @@ Ext.define('FunnyClub.view.lol.RecordView', {
     },
     xtype: 'app-record',
     requires: [
-//         'FunnyClub.view.comments.CommentsGrid',
-//         'FunnyClub.view.comments.CommentsViewController',
+         'FunnyClub.view.lol.RecordGrid',
+         'FunnyClub.view.lol.RecordViewController'
     ], 
     name: 'recordView',
-//    controller: 'record',
+    controller: 'record',
     autoScrool: true,
     layout: {
         type: 'vbox',
@@ -27,28 +27,27 @@ Ext.define('FunnyClub.view.lol.RecordView', {
         pack: 'start'
     },
     margin: '5 6 5 6',
-    html: '<p>World!</p>'
-//    initComponent:function(){
-//        var me = this;
-//        
-//        this.commentsGrid = Ext.create('FunnyClub.view.lol.RecordGrid',{
-//            margin: '5 0 0 0'
-//        });
-//
-////        this.searchContainer = Ext.create('FunnyClub.view.comments.CommentsCriteriaContainer');
-//        
-//        this.items = [
-////            this.searchContainer,          	
-//            this.commentsGrid
-//        ];
-//
-////        this.listeners = {
-////            boxready: 'onCommentsViewBoxready',
-////            scope: this.controller
-////        };
-//        
-//        this.callParent();
-//    }
+    initComponent:function(){
+        var me = this;
+        
+        this.recordGrid = Ext.create('FunnyClub.view.lol.RecordGrid',{
+            margin: '5 0 0 0'
+        });
+
+//        this.searchContainer = Ext.create('FunnyClub.view.comments.CommentsCriteriaContainer');
+        
+        this.items = [
+//            this.searchContainer,          	
+            this.recordGrid
+        ];
+
+        this.listeners = {
+            boxready: 'onRecordViewBoxready',
+            scope: this.controller
+        };
+        
+        this.callParent();
+    }
 },function(){
     FunnyClub.registerPageCmp(this.pageId, this.$className);
 });

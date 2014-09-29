@@ -25,6 +25,11 @@
 			<result name="success">/jsp/json.jsp</result>
 			<result name="error">index.jsp</result>
 		</action>
+		
+		<action name="findLolDate" class="com.funny.action.LoLAciton" method="findLolDate">
+			<result name="success">/jsp/json.jsp</result>
+		</action>
+		
 	</package>
 
 	<package name="ajax" extends="json-default">
@@ -32,5 +37,9 @@
 	      <!-- 将返回类型设置为json -->
 	      <result type="json"></result>
 	    </action>
-	  </package>
+	    
+	    <action name="loadPagedGames" class="com.funny.action.LoLAciton" method="loadPagedGames">
+			<result type="json"></result>
+		</action>
+	 </package>
 </struts>

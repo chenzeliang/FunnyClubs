@@ -820,15 +820,19 @@ $include-funnyclub-registy: true;
 $include-funnyclub-controller-applicationcontroller: true;
 $include-funnyclub-model-common-funcdatamodel: true;
 $include-funnyclub-model-common-navmodel: true;
+$include-funnyclub-model-lol-recordmodel: true;
 $include-funnyclub-store-common-funcdatastore: true;
 $include-funnyclub-store-common-navstore: true;
+$include-funnyclub-store-lol-recordgridstore: true;
 $include-funnyclub-view-viewport: true;
 $include-funnyclub-view-common-funcdataview: true;
 $include-funnyclub-view-common-headcontainer: true;
 $include-funnyclub-view-common-mainpanel: true;
 $include-funnyclub-view-common-navdataview: true;
 $include-funnyclub-view-common-navviewcontroller: true;
+$include-funnyclub-view-lol-recordgrid: true;
 $include-funnyclub-view-lol-recordview: true;
+$include-funnyclub-view-lol-recordviewcontroller: true;
 /* including package ext-theme-base */
 @import '../../../../../ext/packages/ext-theme-base/sass/etc/all';
 /* including package ext-theme-neutral */
