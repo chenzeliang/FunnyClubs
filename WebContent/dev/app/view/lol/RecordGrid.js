@@ -44,7 +44,6 @@ Ext.define('FunnyClub.view.lol.RecordGrid', {
 			{ 
 			  text: 'model',
 			  width:200,
-			  flex: 1,
 			  dataIndex: 'model'
 //              renderer: app.ext.columnsRenderer.addtooltip
 			},
